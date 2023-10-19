@@ -76,12 +76,28 @@ footer {
     position: absolute;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.2)
+    background-color: rgba(0, 0, 0, 0.4)
+}
+
+.modal-header {
+    color: black;
+    font: bold;
+    font-size: 40px;
+   
+    text-align: center;
+}
+
+.modal-comment {
+    margin-top: 50px;
 }
 
 .center-modal {
     position: absolute;
+    padding: 40px;
+    padding-left: 80px;
+    padding-right: 80px;
     background-color: white;
+    flex-direction: column;
     border-radius: 7px;
     width: 500px;
     height: 500px;
