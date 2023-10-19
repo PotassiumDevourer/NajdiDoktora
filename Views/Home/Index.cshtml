@@ -23,7 +23,14 @@
                 Začít
             </button>
     </div>
+       
+    
 </div>
+    <div id="loading-modal" class="modal-wrapper" style="display:none">
+        <div class="center-modal">
+            <div class="lds-dual-ring"></div>
+        </div>
+    </div>
 </body>
 
 <script src="js/landing.js"></script>
@@ -33,6 +40,8 @@
         
 
         console.log("location");
+        var modal = document.getElementById("loading-modal");
+        modal.style = "display: flex;";
         function success(position) {
             console.log("success");
             const latitude = position.coords.latitude;
