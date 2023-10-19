@@ -3,6 +3,11 @@
 
 @{
     Layout = null;
+
+    string EvaluateField(string field)
+    {
+        return field == null || field == String.Empty ? "Neuvedeno" : field;
+    }
 }
 
 <!DOCTYPE html>
@@ -47,12 +52,12 @@
             </div>
             <div class="individualResultItems">
                 <div class="individualResultText">
-                    <div><i class="fa-solid fa-location-dot"></i><a>: @item.FormattedAddress</a></div>
-                    <div><i class="fa-solid fa-phone"></i><a>: @item.FormattedPhoneNumber</a></div>
-                    <div><i class="fa-solid fa-globe"></i><a>: @item.Website</a></div>
-                    <div><i class="fa-solid fa-magnifying-glass"></i><a>: @item.ReviewCount</a></div>
-                    <div><i class="fa-solid fa-star"></i><a>: @item.AverageRating</a></div>
-                    <div><i class="fa-solid fa-map-location-dot"></i><a>: @item.Distance.ToString("0.##") km</a></div>
+                    <div><i class="fa-solid fa-location-dot"></i><a>@EvaluateField(item.Name)</a></div>
+                    <div><i class="fa-solid fa-phone"></i><a>@EvaluateField(item.FormattedPhoneNumber)</a></div>
+                    <div><i class="fa-solid fa-globe"></i><a>@EvaluateField(item.Website)</a></div>
+                    <div><i class="fa-solid fa-magnifying-glass"></i><a>@EvaluateField(item.ReviewCount.ToString())</a></div>
+                    <div><i class="fa-solid fa-star"></i><a>@EvaluateField(item.AverageRating.ToString("0.#"))</a></div>
+                    <div><i class="fa-solid fa-map-location-dot"></i><a>@item.Distance.ToString("0.##") km</a></div>
                 </div>
                 <div class="individualResultMap">
                     <iframe src="@item.EmbedLink"></iframe>

@@ -102,11 +102,23 @@ body {
 .individualResultMap {
   
 }
+.individualResultMap iframe {
+  width: 170%;
+  height: 100%;
+  margin-left: -70%;
+  border: 0px;
+}
 .individualResultText {
   margin: 10px 5px 0px 10px;
   padding-bottom: 0px;
   padding-top: 5px;
   color: rgb(0,0,0);
+}
+.individualResultText a{
+  margin-left: 10px;
+}
+.individualResultText i{
+  height: 24px;
 }
 .individualResultText div{
   margin: 0px 10px 5px 9px;
