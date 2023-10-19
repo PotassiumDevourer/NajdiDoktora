@@ -54,12 +54,14 @@ namespace NajdiDoktoraApp.Services
                     completeData.ReviewCount = bestMatch.user_ratings_total;
                     completeData.AverageRating = bestMatch.rating;
                     completeData.Status = bestMatch.business_status;
+                   
                     completeData.EmbedLink = @$"https://www.google.com/maps/embed/v1/place?key=AIzaSyCQc83GzJ7_-CgWmE6qlrzb8_so_rnQ0rs&q=place_id:{bestMatch.place_id}";
                     var url = @$"https://maps.googleapis.com/maps/api/place/details/json?place_id={bestMatch.place_id}&key={_apiKey}";
                     var detail = await _client.GetFromJsonAsync<PlaceDetails>(url);
                     if(detail != null)
                     {
                         completeData.FormattedPhoneNumber = detail.result.formatted_phone_number;
+                        completeData.Reviews = detail.result.reviews;
                     }
                     
                 }

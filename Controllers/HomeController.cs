@@ -19,13 +19,6 @@ namespace NajdiDoktoraApp.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var items = await _api.GetClinics(new SearchParams()
-            {
-                ResultCount = 5,
-                Type = Enums.ClinicType.ChildGeneralPracticioner,
-                UserLat = 50.2044472,
-                UserLong = 15.8292865,
-            });
             return View();
         }
 
