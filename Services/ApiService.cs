@@ -61,7 +61,9 @@ namespace NajdiDoktoraApp.Services
                     if(detail != null)
                     {
                         completeData.FormattedPhoneNumber = detail.result.formatted_phone_number;
+                        completeData.Status = detail.status;
                         completeData.Reviews = detail.result.reviews;
+                        completeData.IsOpen = detail.result.Opening_HoursDetail.open_now;
                     }
                     
                 }
