@@ -38,22 +38,22 @@ body {
   background-color: rgb(73, 107, 241);
   border-radius: 10px;
   border: 0px;
-  width: 14rem;
-  height: 3rem;
+  width: 12rem;
+  height: 2.5rem;
   box-shadow: none;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 15px;
   text-align: center;
   color: rgb(241,241,241);
 }
 .typeBar {
-  width: 20rem;
+  width: 18rem;
   border-radius: 10px;
-  border: 2px solid;
+  border: 1px solid;
   border-color: rgba(148,148,151,50);
   padding-left: 10px;
-  font-size: 20px;
-  height: 3rem;
+  font-size: 15px;
+  height: 2.5rem;
 }
 .typeBar:focus{
   
@@ -61,35 +61,77 @@ body {
   border-color: rgb(0,0,0);
 }
 .addressBar {
-  width: 20rem;
+  width: 18rem;
   border-radius: 10px;
-  border: 2px solid;
+  border: 1px solid;
   border-color: rgba(148,148,151,50);
   padding-left: 10px;
-  font-size: 20px;
-  height: 3rem;
+  font-size: 15px;
+  height: 2.5rem;
 }
 .results {
   margin-top: 2rem;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .individualResult {
+  width: 69%;
+  margin-bottom: 2rem;
+}
+.individualResultTitle {
+  border-radius: 10px 10px 0px 0px;
+  background-color: rgb(73, 107, 241);
+  padding: 5px 10px 5px 10px;
+  color: rgb(241,241,241);
+}
+.individualResultItems {
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+  border-left: 1px solid;
+  border-color: rgba(148,148,151,10);
+  border-radius: 0px 0px 10px 10px;
+}
+.individualResultText {
+  margin: 0px 5px 0px 0px;
+  padding-bottom: 0px;
+  padding-top: 5px;
+  color: rgb(0,0,0);
+}
+.individualResultText p{
+  margin: 0px 10px 5px 9px;
+}
+/*
+.individualResult {
   margin: 2rem;
-  background: linear-gradient(to bottom, rgb(73, 107, 241) 50%, #FFFFFF 50%);
+  border-radius: 10px 10px 0px 0px;
+  background-color: rgb(73, 107, 241);
+  padding: 5px 10px 0px 10px;
+  color: rgb(241,241,241);
+}
+.individualResultItems {
+  margin-top: 0.5rem;
+  padding: 0px 10px 0px 10px;
+  border: 1px solid;
+  border-color: rgba(148,148,151,10);
+  border-radius: 0px 0px 10px 10px;
 }
 .individualResult p {
-  background-color: rebeccapurple;
-}
+  margin: 0px;
+  padding-bottom: 0px;
+  color: rgb(0,0,0);
+}*/
 .underline {
   margin: 2rem 15rem 2rem 15rem;
 }
 .blueButtonMap {
   background-color: rgb(73, 107, 241);
+  margin-left: -1.5rem;
   border-radius: 10px;
   border: 0px;
-  width: 3rem;
-  height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
   box-shadow: none;
   font-weight: bold;
   font-size: 20px;
