@@ -28,6 +28,7 @@ body {
 .main-view {
     margin-top: 5px;
     display: flex;
+    flex-direction: column;
 }
 
 .main-heading {
@@ -37,6 +38,38 @@ body {
 
 .main-heading h2 {
     font-size: 52px;
+}
+
+.parts {
+    display: flex;
+    width: 100%;
+    margin-left: 85px;
+    margin-right: 85px;
+}
+
+.left-side {
+    flex: 1;
+}
+
+.right-side {
+    flex: 1;
+    width: 300px;
+    background-color: #496bf1;
+}
+
+.blueButtonMap {
+    background-color: #496bf1;
+    border-radius: 10px;
+    border: 0px;
+    width: 2.5rem;
+    height: 2.5rem;
+    box-shadow: none;
+    font-weight: bold;
+    color: rgb(241,241,241);
+}
+
+.blueButtonMap svg {
+    margin: auto;
 }
 
 @font-face {
