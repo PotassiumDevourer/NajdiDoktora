@@ -3,6 +3,7 @@
     public class CompleteClinic
     {
         public string Name { get; set; }
+        public string PlaceId { get; set; }
         public string FormattedAddress { get; set; }
         public string FormattedPhoneNumber { get; set; }
         public string Website { get; set; }
