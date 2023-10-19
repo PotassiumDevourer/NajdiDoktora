@@ -19,13 +19,40 @@
     </div>
     <div class="right-side">
         <img class="doctors-img" src="doctors.svg"/>
-        <a class="begin-button" href="/Home/Search">
-            <button class="btn" onclick="clickFunction()">
+            <button id="find-me" class="btn">
                 Začít
             </button>
-        </a>
     </div>
 </div>
 </body>
 
 <script src="js/landing.js"></script>
+<script>
+    function geoFindMe() {
+        
+        
+
+        console.log("location");
+        function success(position) {
+            console.log("success");
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+            window.location = `/home/ProcessLocation?longt=${longitude}&latt=${latitude}`;
+            console.log(position);
+        }
+
+        function error() {
+            
+        }
+
+        if (!navigator.geolocation) {
+           
+        } else {
+            
+            navigator.geolocation.getCurrentPosition(success, error);
+        }
+    }
+
+    document.querySelector("#find-me").addEventListener("click", geoFindMe);
+
+</script>

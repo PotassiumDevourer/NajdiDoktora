@@ -22,6 +22,19 @@ namespace NajdiDoktoraApp.Controllers
             return View();
         }
 
+        public IActionResult ProcessLocation(double longt, double latt)
+        {
+            return RedirectToAction("Search", new SearchResults()
+            {
+                Parameters = new SearchParams()
+                {
+                    Type = ClinicType.Dentist,
+                    UserLat = latt,
+                    UserLong = longt,
+                }
+            });
+        }
+
         public async Task<IActionResult> Search(SearchResults model)
         {
             if (model.Parameters == null)
