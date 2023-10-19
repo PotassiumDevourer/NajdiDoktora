@@ -2,6 +2,7 @@
 {
     public class CompleteClinic
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public string PlaceId { get; set; }
         public string FormattedAddress { get; set; }

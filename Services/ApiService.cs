@@ -41,6 +41,7 @@ namespace NajdiDoktoraApp.Services
                 clinicData.features = clinicData.features.OrderBy(x => x.Distance).ToArray();
             }
             int dataCount = searchData.ResultCount;
+           
             for (int i = 0; i < dataCount; i++)
             {
 
@@ -81,6 +82,7 @@ namespace NajdiDoktoraApp.Services
                 {
                     break;
                 }
+                completeData.Id = result.Count;
                 completeData.Website = item.attributes.www;
                 completeData.Distance = item.Distance;
                 result.Add(completeData);
