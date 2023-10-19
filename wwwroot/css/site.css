@@ -85,6 +85,8 @@ body {
   background-color: rgb(73, 107, 241);
   padding: 5px 10px 5px 10px;
   color: rgb(241,241,241);
+  display: flex;
+  justify-content: space-between;
 }
 .individualResultItems {
   border-bottom: 1px solid;
@@ -102,26 +104,6 @@ body {
 .individualResultText p{
   margin: 0px 10px 5px 9px;
 }
-/*
-.individualResult {
-  margin: 2rem;
-  border-radius: 10px 10px 0px 0px;
-  background-color: rgb(73, 107, 241);
-  padding: 5px 10px 0px 10px;
-  color: rgb(241,241,241);
-}
-.individualResultItems {
-  margin-top: 0.5rem;
-  padding: 0px 10px 0px 10px;
-  border: 1px solid;
-  border-color: rgba(148,148,151,10);
-  border-radius: 0px 0px 10px 10px;
-}
-.individualResult p {
-  margin: 0px;
-  padding-bottom: 0px;
-  color: rgb(0,0,0);
-}*/
 .underline {
   margin: 2rem 15rem 2rem 15rem;
 }
