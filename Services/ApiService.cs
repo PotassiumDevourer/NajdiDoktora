@@ -33,11 +33,21 @@ namespace NajdiDoktoraApp.Services
             for (int i = 0; i < searchData.ResultCount; i++)
             {
                 var item = clinicData.features[i];
-                result.Add(new CompleteClinic()
+                var searchResult = await _client.GetFromJsonAsync<PlaceSearchResults>(@$"https://maps.googleapis.com/maps/api/place/textsearch/json?query={item.attributes.nazev_ulice} {item.attributes.typ_cisla_domovniho} {item.attributes.nazev_obce} {item.attributes.psc}&key={_apiKey}");
+                if(searchResult != null)
                 {
-                    Website = item.attributes.www,
-                    Distance = item.Distance,
-                }) ;
+                    var url = @$"https://maps.googleapis.com/maps/api/place/details/json?place_id={searchResult.results[0].place_id}&key={_apiKey}";
+                    var detail = await _client.GetFromJsonAsync<PlaceDetails>(url);
+                    if(detail != null)
+                    {
+                        // do stuff with detail data
+                    }
+                }
+                var completeData = new CompleteClinic();
+
+                completeData.Website = item.attributes.www;
+                completeData.Distance = item.Distance;
+                result.Add(completeData);
             }
 
             return result.ToArray();

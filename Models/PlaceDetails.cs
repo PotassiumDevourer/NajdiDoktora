@@ -1,10 +1,10 @@
 ﻿namespace NajdiDoktoraApp.Models
 {
 
-    public class Rootobject
+    public class PlaceDetails
     {
         public object[] html_attributions { get; set; }
-        public DetailedResult DetailedResult { get; set; }
+        public DetailedResult result { get; set; }
         public string status { get; set; }
     }
 
