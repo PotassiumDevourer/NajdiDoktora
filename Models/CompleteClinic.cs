@@ -11,6 +11,7 @@
         public string EmbedLink { get; set; }
         public float AverageRating { get; set; }
         public double Distance { get; set; }
+        public bool IsOpen { get; set; }
         public Review[] Reviews { get; set; }
     }
 }
