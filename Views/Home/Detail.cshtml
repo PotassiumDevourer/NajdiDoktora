@@ -24,37 +24,37 @@
             <div class="item">
                 <div class="content">
                     <i class="fa-solid fa-location-dot"></i>
-                    <p>Hradecká 1159/8</p>
+                    <p>@Model.FormattedAddress</p>
                 </div>
             </div>
             <div class="item">
                 <div class="content">
                     <i class="fa-solid fa-globe"></i>
-                    <p>www.google.com</p>
+                    <p>@Model.Website</p>
                 </div>
             </div>
             <div class="item">
                 <div class="content">
                     <i class="fa-solid fa-phone"></i>
-                    <p>+420 123 456 789</p>
+                    <p>@Model.FormattedPhoneNumber</p>
                 </div>
             </div>
             <div class="item">
                 <div class="content">
                     <i class="fa-regular fa-clock"></i>
-                    <p>Otevřeno nyní</p>
+                    <p>@Model.Status == "OPERATIONAL" ? Otevřeno : Zavřeno</p>
                 </div>
             </div>
             <div class="item">
                 <div class="content">
                     <i class="fa-regular fa-building"></i>
-                    <p>EUC Klinika</p>
+                    <p>@Model.Name</p>
                 </div>
             </div>
             <div class="item">
                 <div class="content">
                     <i class="fa-solid fa-star"></i>
-                    <p>4.1 / 5⭐</p>
+                    <p>@Model.AverageRating / 5⭐</p>
                 </div>
             </div>
         </div>
@@ -69,48 +69,15 @@
         <h2>Hodnocení🌟</h2>
     </div>
     <div class="review-container">
-        <div class="review">
-            <div class="review-content">
-                <h3>Petr Novák <br/> 4.1 / 5⭐</h3>
-                <p>Moc se mi tam líbilo, chtěl bych se tam znovu podívat</p>
+        @foreach (var item in Model.Reviews)
+        {
+            <div class="review">
+                <div class="review-content">
+                    <h3>@item.author_name<br/> @item.rating / 5⭐</h3>
+                    <p>@item.text</p>
+                </div>
             </div>
-        </div>
-        <div class="review">
-            <div class="review-content">
-                <h3>Petr Novák <br/> 4.1 / 5⭐</h3>
-                <p>Moc se mi tam líbilo, chtěl bych se tam znovu podívat</p>
-            </div>
-        </div>
-        <div class="review">
-            <div class="review-content">
-                <h3>Petr Novák <br/> 4.1 / 5⭐</h3>
-                <p>Moc se mi tam líbilo, chtěl bych se tam znovu podívat</p>
-            </div>
-        </div>
-        <div class="review">
-            <div class="review-content">
-                <h3>Petr Novák <br/> 4.1 / 5⭐</h3>
-                <p>Moc se mi tam líbilo, chtěl bych se tam znovu podívat</p>
-            </div>
-        </div>
-        <div class="review">
-            <div class="review-content">
-                <h3>Petr Novák <br/> 4.1 / 5⭐</h3>
-                <p>Moc se mi tam líbilo, chtěl bych se tam znovu podívat</p>
-            </div>
-        </div>
-        <div class="review">
-            <div class="review-content">
-                <h3>Petr Novák <br/> 4.1 / 5⭐</h3>
-                <p>Moc se mi tam líbilo, chtěl bych se tam znovu podívat</p>
-            </div>
-        </div>
-        <div class="review">
-            <div class="review-content">
-                <h3>Petr Novák <br/> 4.1 / 5⭐</h3>
-                <p>Moc se mi tam líbilo, chtěl bych se tam znovu podívat</p>
-            </div>
-        </div>
+        }
     </div>
 </div>
 </body>
