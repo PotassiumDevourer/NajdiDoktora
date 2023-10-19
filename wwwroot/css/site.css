@@ -96,14 +96,19 @@ body {
   border-left: 1px solid;
   border-color: rgba(148,148,151,10);
   border-radius: 0px 0px 10px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.individualResultMap {
+  
 }
 .individualResultText {
-  margin: 0px 5px 0px 0px;
+  margin: 10px 5px 0px 10px;
   padding-bottom: 0px;
   padding-top: 5px;
   color: rgb(0,0,0);
 }
-.individualResultText p{
+.individualResultText div{
   margin: 0px 10px 5px 9px;
 }
 .underline {

@@ -31,19 +31,12 @@ namespace NajdiDoktoraApp.Controllers
 
         public async Task<IActionResult> Search(SearchResults model)
         {
-            var items = await _api.GetClinics(new SearchParams()
+            if (model.Parameters == null)
             {
-                ResultCount = 5,
-                Type = ClinicType.Dentist,
-                UserLat = 50.2044472,
-                UserLong = 15.8292865,
-            });
-            model.Results = items;
-            return View(model);
-        }
-
-        public async  Task<IActionResult> SearchFor(SearchResults model)
-        {
+                model = new SearchResults();
+                model.Parameters = new SearchParams();
+                model.Parameters.Type = ClinicType.Dentist;
+            }
             var items = await _api.GetClinics(new SearchParams()
             {
                 ResultCount = 5,
@@ -52,8 +45,9 @@ namespace NajdiDoktoraApp.Controllers
                 UserLong = 15.8292865,
             });
             model.Results = items;
-            return RedirectToAction("Search", model);
+            return View(model);
         }
+
         public IActionResult Privacy()
         {
             return View();

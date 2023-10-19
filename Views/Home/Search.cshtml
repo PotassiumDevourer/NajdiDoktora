@@ -16,14 +16,14 @@
 <div class="fakeNavbar">Najdi doktora</div>
 <!---->
 <div>
-    <form asp-action=SearchFor class="searchPart">
+    <form asp-action=Search class="searchPart">
         <input type="text" class="addressBar" rows="1" placeholder="Adresa"/> <!--add  asp-for-->
         <button type="button" class="blueButtonMap">
                 <i class="fa-solid fa-location-dot"></i></button>
         <select class="typeBar" asp-for="Parameters.Type"><!--add  asp-for-->
             @foreach (var item in EnumMapper.ClinicTypeMap)
             {
-                <option id="@item.Type" value="@item.ClinicName">@item.ClinicName</option>
+                <option id="@item.Type" value="@item.Type">@item.ClinicName</option>
             }
         </select>
         <button type="submit" class="blueButtonSearch">Hledat</button>
@@ -47,12 +47,14 @@
             </div>
             <div class="individualResultItems">
                 <div class="individualResultText">
-                    <i class="fa-solid fa-location-dot"></i><p>: @item.FormattedAddress</p>
-                    <i class="fa-solid fa-phone"></i><p>: @item.FormattedPhoneNumber</p>
-                    <i class="fa-solid fa-globe"></i><p>: @item.Website</p>
-                    <i class="fa-solid fa-magnifying-glass"></i><p>: @item.ReviewCount</p>
-                    <i class="fa-solid fa-star"></i><p>: @item.AverageRating</p>
-                    <i class="fa-solid fa-map-location-dot"></i><p>: @item.Distance.ToString("0.##") km</p>
+                    <div><i class="fa-solid fa-location-dot"></i><a>: @item.FormattedAddress</a></div>
+                    <div><i class="fa-solid fa-phone"></i><a>: @item.FormattedPhoneNumber</a></div>
+                    <div><i class="fa-solid fa-globe"></i><a>: @item.Website</a></div>
+                    <div><i class="fa-solid fa-magnifying-glass"></i><a>: @item.ReviewCount</a></div>
+                    <div><i class="fa-solid fa-star"></i><a>: @item.AverageRating</a></div>
+                    <div><i class="fa-solid fa-map-location-dot"></i><a>: @item.Distance.ToString("0.##") km</a></div>
+                </div>
+                <div class="individualResultMap">
                     <iframe src="@item.EmbedLink"></iframe>
                 </div>
             </div>
