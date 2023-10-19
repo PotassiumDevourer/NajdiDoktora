@@ -25,7 +25,7 @@ body {
 
 .container {
     display: flex;
-    height: 95vh;
+    height: 97vh;
     margin: auto 85px 0 85px;
     width: 100%;
 }
@@ -60,6 +60,11 @@ body {
     font-size: 32px;
     margin-top: 0;
     margin-bottom: 0;
+}
+
+footer {
+    background-color: #FFFFFF;
+    width: 100%;
 }
 
 .doctors-img {
