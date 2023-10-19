@@ -1,4 +1,4 @@
-﻿@model int
+﻿@model CompleteClinic
 
 @{
     Layout = null;
@@ -10,30 +10,109 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="~/css/detail.css" asp-append-version="true" />
-    <title>Najdi Doktora👨‍⚕️</title>
+    <title>Najdi doktora👨‍⚕️</title>
 </head>
 
 <body class="overrideBody">
 <div class="fakeNavbar">Najdi doktora</div>
 <div class="main-view">
     <div class="main-heading">
-        <h2>Logopedická poradna</h2>
+        <h2>Logopedická klinika</h2>
     </div>
     <div class="parts">
         <div class="left-side">
-            <button type="button" class="blueButtonMap">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="28" viewBox="0 0 38 46" fill="none">
-                    <path d="M25.8 19C25.8 20.8035 25.0835 22.5331 23.8083 23.8083C22.533 25.0836 20.8034 25.8 19 25.8C17.1965 25.8 15.4669 25.0836 14.1916 23.8083C12.9164 22.5331 12.2 20.8035 12.2 19C12.2 17.1965 12.9164 15.4669 14.1916 14.1917C15.4669 12.9164 17.1965 12.2 19 12.2C20.8034 12.2 22.533 12.9164 23.8083 14.1917C25.0835 15.4669 25.8 17.1965 25.8 19Z" stroke="#FDFDFD" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M36 19C36 35.1885 19 44.5 19 44.5C19 44.5 2 35.1885 2 19C2 14.4913 3.79107 10.1673 6.97918 6.97918C10.1673 3.79107 14.4913 2 19 2C23.5087 2 27.8327 3.79107 31.0208 6.97918C34.2089 10.1673 36 14.4913 36 19Z" stroke="#FDFDFD" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-            
+            <div class="item">
+                <div class="content">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p>Hradecká 1159/8</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <i class="fa-solid fa-globe"></i>
+                    <p>www.google.com</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <i class="fa-solid fa-phone"></i>
+                    <p>+420 123 456 789</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <i class="fa-regular fa-clock"></i>
+                    <p>Otevřeno nyní</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <i class="fa-regular fa-building"></i>
+                    <p>EUC Klinika</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <i class="fa-solid fa-star"></i>
+                    <p>4.1 / 5⭐</p>
+                </div>
+            </div>
         </div>
         <div class="right-side">
             
         </div>
     </div>
 </div>
+<div class="reviews">
+    <div class="heading-review">
+        <hr/>
+        <h2>Hodnocení🌟</h2>
+    </div>
+    <div class="review-container">
+        <div class="review">
+            <div class="review-content">
+                <h3>Petr Novák <br/> 4.1 / 5⭐</h3>
+                <p>Moc se mi tam líbilo, chtěl bych se tam znovu podívat</p>
+            </div>
+        </div>
+        <div class="review">
+            <div class="review-content">
+                <h3>Petr Novák <br/> 4.1 / 5⭐</h3>
+                <p>Moc se mi tam líbilo, chtěl bych se tam znovu podívat</p>
+            </div>
+        </div>
+        <div class="review">
+            <div class="review-content">
+                <h3>Petr Novák <br/> 4.1 / 5⭐</h3>
+                <p>Moc se mi tam líbilo, chtěl bych se tam znovu podívat</p>
+            </div>
+        </div>
+        <div class="review">
+            <div class="review-content">
+                <h3>Petr Novák <br/> 4.1 / 5⭐</h3>
+                <p>Moc se mi tam líbilo, chtěl bych se tam znovu podívat</p>
+            </div>
+        </div>
+        <div class="review">
+            <div class="review-content">
+                <h3>Petr Novák <br/> 4.1 / 5⭐</h3>
+                <p>Moc se mi tam líbilo, chtěl bych se tam znovu podívat</p>
+            </div>
+        </div>
+        <div class="review">
+            <div class="review-content">
+                <h3>Petr Novák <br/> 4.1 / 5⭐</h3>
+                <p>Moc se mi tam líbilo, chtěl bych se tam znovu podívat</p>
+            </div>
+        </div>
+        <div class="review">
+            <div class="review-content">
+                <h3>Petr Novák <br/> 4.1 / 5⭐</h3>
+                <p>Moc se mi tam líbilo, chtěl bych se tam znovu podívat</p>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 
-<script src="js/site.js"></script>
+<script src="https://kit.fontawesome.com/b85629988f.js" crossorigin="anonymous"></script>
