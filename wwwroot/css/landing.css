@@ -1,0 +1,81 @@
+﻿html {
+    font-size: 14px;
+    font-family: 'InterReal';
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    background: #496bf1;
+    height: 100%;
+    display: flex;
+}
+
+@font-face {
+    font-family: InterReal;
+    src: url("../font/Inter-Bold.ttf");
+}
+
+.overrideBody {
+    margin: 0 0 0 0;
+}
+
+.container {
+    display: flex;
+    height: 95vh;
+    margin: auto 85px 0 85px;
+    width: 100%;
+}
+
+.left-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-heading {
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 72px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.second-heading {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 32px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.doctors-img {
+    width: 450px;
+    margin-bottom: 25px;
+}
+
+.btn {
+    margin-top: 25px;
+    width: 250px;
+    height: 50px;
+    color: #496bf1;
+    background: #ffffff;
+    border: none;
+    border-radius: 7px;
+    font-size: 20px;
+    font-weight: 800;
+    cursor: pointer;
+}
