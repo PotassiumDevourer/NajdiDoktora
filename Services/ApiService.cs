@@ -16,11 +16,20 @@ namespace NajdiDoktoraApp.Services
             _apiKey = apiKey;
 
         }
+
+        public async Task<Review[]> GetReviews(string placeId)
+        {
+            var url = @$"https://maps.googleapis.com/maps/api/place/details/json?place_id={placeId}&key={_apiKey}";
+            var detail = await _client.GetFromJsonAsync<PlaceDetails>(url);
+            return detail.result.reviews;
+        }
+
         public async Task<CompleteClinic[]> GetClinics(SearchParams searchData)
         {
             List<CompleteClinic> result = new List<CompleteClinic>();
             string endpoint = EnumMapper.ClinicTypeMap.First(x => x.Type == searchData.Type).Endpoint;
             var clinicData = await _client.GetFromJsonAsync<ClinicData>(endpoint);
+        
             if(clinicData != null )
             {
                 foreach (var item in clinicData.features)
@@ -43,6 +52,7 @@ namespace NajdiDoktoraApp.Services
                 if (searchResult != null)
                 {
                     var bestMatch = searchResult.results.FirstOrDefault(x => x.types.Contains("hospital") || x.types.Contains("health") || x.types.Contains("doctor") || x.types.Contains("dentist") || (x.types.Contains("street_address") && x.types.Count() == 1));
+                    completeData.PlaceId = bestMatch.place_id;
                     if(bestMatch == null)
                     {
                         dataCount++;
