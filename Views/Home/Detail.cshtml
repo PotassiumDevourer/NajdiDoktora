@@ -69,15 +69,19 @@
         <h2>Hodnocení🌟</h2>
     </div>
     <div class="review-container">
-        @foreach (var item in Model.Reviews)
-        {
-            <div class="review">
-                <div class="review-content">
-                    <h3>@item.author_name<br/> @item.rating / 5⭐</h3>
-                    <p>@item.text</p>
-                </div>
-            </div>
-        }
+            @if (Model.Reviews != null)
+            {
+                @foreach (var item in Model.Reviews)
+                {
+                    <div class="review">
+                        <div class="review-content">
+                            <h3>@item.author_name<br /> @item.rating / 5⭐</h3>
+                            <p>@item.text</p>
+                        </div>
+                    </div>
+                }
+            }
+            
     </div>
 </div>
 </body>
