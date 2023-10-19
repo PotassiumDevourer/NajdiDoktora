@@ -34,6 +34,79 @@ body {
   font-family: 'InterReal', serif;
 }
 
+.blueButtonSearch {
+  background-color: rgb(73, 107, 241);
+  border-radius: 10px;
+  border: 0px;
+  width: 14rem;
+  height: 3rem;
+  box-shadow: none;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  color: rgb(241,241,241);
+}
+.typeBar {
+  width: 20rem;
+  border-radius: 10px;
+  border: 2px solid;
+  border-color: rgba(148,148,151,50);
+  padding-left: 10px;
+  font-size: 20px;
+  height: 3rem;
+}
+.typeBar:focus{
+  
+  border: 2px solid;
+  border-color: rgb(0,0,0);
+}
+.addressBar {
+  width: 20rem;
+  border-radius: 10px;
+  border: 2px solid;
+  border-color: rgba(148,148,151,50);
+  padding-left: 10px;
+  font-size: 20px;
+  height: 3rem;
+}
+.results {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+.individualResult {
+  margin: 2rem;
+  background: linear-gradient(to bottom, rgb(73, 107, 241) 50%, #FFFFFF 50%);
+}
+.individualResult p {
+  background-color: rebeccapurple;
+}
+.underline {
+  margin: 2rem 15rem 2rem 15rem;
+}
+.blueButtonMap {
+  background-color: rgb(73, 107, 241);
+  border-radius: 10px;
+  border: 0px;
+  width: 3rem;
+  height: 3rem;
+  box-shadow: none;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  color: rgb(241,241,241);
+}
+
+.searchPart{
+  margin-top: 4rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
 @font-face {
   font-family: InterReal;
   src: url("../font/Inter-Medium.ttf");

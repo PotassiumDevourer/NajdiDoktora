@@ -32,6 +32,11 @@ namespace NajdiDoktoraApp.Controllers
         {
             return View();
         }
+
+        public IActionResult SearchFor()
+        {
+            return RedirectToAction("Search");
+        }
         public IActionResult Privacy()
         {
             return View();

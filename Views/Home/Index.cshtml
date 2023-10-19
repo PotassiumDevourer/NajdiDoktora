@@ -1,10 +1,31 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    Layout = null;
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/landing.css" asp-append-version="true" />
+    <title>Najdi Doktora👨‍⚕️</title>
+</head>
 
-<a href="/Home/Search"><button>Button</button></a>
+<body>
+<div class="container">
+    <div class="left-side">
+        <h1 class="main-heading">Najdi doktora👨‍⚕️</h1>
+        <h2 class="second-heading">I tvé zdraví si to zaslouží.🩺</h2>
+    </div>
+    <div class="right-side">
+        <img class="doctors-img" src="doctors.svg"/>
+        <a class="begin-button" href="/Home/Search">
+            <button class="btn" onclick="clickFunction()">
+                Začít
+            </button>
+        </a>
+    </div>
+</div>
+</body>
+
+<script src="js/landing.js"></script>
