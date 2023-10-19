@@ -3,7 +3,7 @@
 
 @{
     Layout = null;
-
+    int i = 0;
     string EvaluateField(string field)
     {
         return field == null || field == String.Empty ? "Neuvedeno" : field;
@@ -36,12 +36,24 @@
 </div> 
 <hr class="underline"/>
 <div class="results">
-    @foreach (var item in Model.Results)
+    @for (i = 0; i < Model.Results.Length; i++)
     {
         <div class="individualResult">
             <div class="individualResultTitle">
-                <a>@item.Name</a>
-                @if (item.Status == "OPERATIONAL")
+                <form asp-action="DetailPreparation">
+                    @Html.HiddenFor(m => m.Results[0].Name, Model.Results[i].Name)
+                    @Html.HiddenFor(m => m.Results[0].Distance, Model.Results[i].Distance)
+                    @Html.HiddenFor(m => m.Results[0].AverageRating, Model.Results[i].AverageRating)
+                    @Html.HiddenFor(m => m.Results[0].EmbedLink, Model.Results[i].EmbedLink)
+                    @Html.HiddenFor(m => m.Results[0].ReviewCount, Model.Results[i].ReviewCount)
+                    @Html.HiddenFor(m => m.Results[0].Website, Model.Results[i].Website)
+                    @Html.HiddenFor(m => m.Results[0].Status, Model.Results[i].Status)
+                    @Html.HiddenFor(m => m.Results[0].FormattedAddress, Model.Results[i].FormattedAddress)
+                    @Html.HiddenFor(m => m.Results[0].IsOpen, Model.Results[i].IsOpen)
+                    @Html.HiddenFor(m => m.Results[0].FormattedPhoneNumber, Model.Results[i].FormattedPhoneNumber)
+                    <button type="submit" class="unbutton"><a>@Model.Results[i].Name</a></button>
+                </form>
+                @if (Model.Results[i].Status == "OPERATIONAL")
                 {
                     <a>Nyní otevřeno</a>
                 }
@@ -52,15 +64,15 @@
             </div>
             <div class="individualResultItems">
                 <div class="individualResultText">
-                    <div><i class="fa-solid fa-location-dot"></i><a>@EvaluateField(item.Name)</a></div>
-                    <div><i class="fa-solid fa-phone"></i><a>@EvaluateField(item.FormattedPhoneNumber)</a></div>
-                    <div><i class="fa-solid fa-globe"></i><a>@EvaluateField(item.Website)</a></div>
-                    <div><i class="fa-solid fa-magnifying-glass"></i><a>@EvaluateField(item.ReviewCount.ToString())</a></div>
-                    <div><i class="fa-solid fa-star"></i><a>@EvaluateField(item.AverageRating.ToString("0.#"))</a></div>
-                    <div><i class="fa-solid fa-map-location-dot"></i><a>@item.Distance.ToString("0.##") km</a></div>
+                    <div><i class="fa-solid fa-location-dot"></i><a>@EvaluateField(Model.Results[i].Name)</a></div>
+                    <div><i class="fa-solid fa-phone"></i><a>@EvaluateField(Model.Results[i].FormattedPhoneNumber)</a></div>
+                    <div><i class="fa-solid fa-globe"></i><a>@EvaluateField(Model.Results[i].Website)</a></div>
+                    <div><i class="fa-solid fa-magnifying-glass"></i><a>@EvaluateField(Model.Results[i].ReviewCount.ToString())</a></div>
+                    <div><i class="fa-solid fa-star"></i><a>@EvaluateField(Model.Results[i].AverageRating.ToString("0.#"))</a></div>
+                    <div><i class="fa-solid fa-map-location-dot"></i><a>@Model.Results[i].Distance.ToString("0.##") km</a></div>
                 </div>
                 <div class="individualResultMap">
-                    <iframe src="@item.EmbedLink"></iframe>
+                    <iframe src="@Model.Results[i].EmbedLink"></iframe>
                 </div>
             </div>
         </div>

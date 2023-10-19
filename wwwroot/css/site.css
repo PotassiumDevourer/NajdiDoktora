@@ -90,6 +90,12 @@ body {
   display: flex;
   justify-content: space-between;
 }
+.unbutton {
+  background: transparent;
+  border: none !important;
+  color: rgb(241,241,241);
+  text-decoration: underline;
+}
 .individualResultItems {
   border-bottom: 1px solid;
   border-right: 1px solid;

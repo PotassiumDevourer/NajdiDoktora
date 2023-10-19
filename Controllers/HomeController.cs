@@ -59,6 +59,10 @@ namespace NajdiDoktoraApp.Controllers
             return View();
         }
 
+        public IActionResult DetailPreparation(SearchResults model)
+        {
+            return RedirectToAction("Detail", model.Results[0]);
+        }
         public IActionResult Detail()
         {
             return View();
