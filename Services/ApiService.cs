@@ -1,6 +1,7 @@
 ﻿using NajdiDoktoraApp.Enums;
 using NajdiDoktoraApp.Models;
 using NajdiDoktoraApp.StaticData;
+using System.Runtime.ExceptionServices;
 
 namespace NajdiDoktoraApp.Services
 {
@@ -24,27 +25,49 @@ namespace NajdiDoktoraApp.Services
             {
                 foreach (var item in clinicData.features)
                 {
-                    double latDiff = (double)Math.Abs(item.attributes.y - searchData.UserLat);
-                    double longDiff = (double)Math.Abs(item.attributes.x - searchData.UserLong);
+                    double latDiff = (double)Math.Abs(item.attributes.y - searchData.UserLat) * 111;
+                    double longDiff = (double)Math.Abs(item.attributes.x - searchData.UserLong) * 111.321;
                     item.Distance = Math.Sqrt(Math.Pow(latDiff, 2) + Math.Pow(longDiff, 2));
                 }
                 clinicData.features = clinicData.features.OrderBy(x => x.Distance).ToArray();
             }
-            for (int i = 0; i < searchData.ResultCount; i++)
+            int dataCount = searchData.ResultCount;
+            for (int i = 0; i < dataCount; i++)
             {
+
                 var item = clinicData.features[i];
-                var searchResult = await _client.GetFromJsonAsync<PlaceSearchResults>(@$"https://maps.googleapis.com/maps/api/place/textsearch/json?query={item.attributes.nazev_ulice} {item.attributes.typ_cisla_domovniho} {item.attributes.nazev_obce} {item.attributes.psc}&key={_apiKey}");
-                if(searchResult != null)
+                if (item.attributes.www == null)
+                    continue;
+                var completeData = new CompleteClinic();
+                var searchResult = await _client.GetFromJsonAsync<PlaceSearchResults>(@$"https://maps.googleapis.com/maps/api/place/textsearch/json?query={item.attributes.www}&key={_apiKey}");
+                if (searchResult != null)
                 {
-                    var url = @$"https://maps.googleapis.com/maps/api/place/details/json?place_id={searchResult.results[0].place_id}&key={_apiKey}";
+                    var bestMatch = searchResult.results.FirstOrDefault(x => x.types.Contains("hospital") || x.types.Contains("health") || x.types.Contains("doctor") || x.types.Contains("dentist") || (x.types.Contains("street_address") && x.types.Count() == 1));
+                    if(bestMatch == null)
+                    {
+                        dataCount++;
+                        continue;
+                    }
+                        
+                    completeData.FormattedAddress = bestMatch.formatted_address;
+                    completeData.Name = bestMatch.name;
+                    completeData.ReviewCount = bestMatch.user_ratings_total;
+                    completeData.AverageRating = bestMatch.rating;
+                    completeData.Status = bestMatch.business_status;
+                    completeData.EmbedLink = @$"https://www.google.com/maps/embed/v1/place?key=AIzaSyCQc83GzJ7_-CgWmE6qlrzb8_so_rnQ0rs&q=place_id:{bestMatch.place_id}";
+                    var url = @$"https://maps.googleapis.com/maps/api/place/details/json?place_id={bestMatch.place_id}&key={_apiKey}";
                     var detail = await _client.GetFromJsonAsync<PlaceDetails>(url);
                     if(detail != null)
                     {
-                        // do stuff with detail data
+                        completeData.FormattedPhoneNumber = detail.result.formatted_phone_number;
                     }
+                    
                 }
-                var completeData = new CompleteClinic();
 
+                if (dataCount >= 40)
+                {
+                    break;
+                }
                 completeData.Website = item.attributes.www;
                 completeData.Distance = item.Distance;
                 result.Add(completeData);

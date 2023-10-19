@@ -20,8 +20,8 @@ namespace NajdiDoktoraApp.Controllers
         {
             var items = await _api.GetClinics(new SearchParams()
             {
-                ResultCount = 15,
-                Type = Enums.ClinicType.Dentist,
+                ResultCount = 5,
+                Type = Enums.ClinicType.ChildGeneralPracticioner,
                 UserLat = 50.2044472,
                 UserLong = 15.8292865,
             });

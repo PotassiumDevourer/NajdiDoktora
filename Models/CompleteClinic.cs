@@ -7,6 +7,8 @@
         public string FormattedPhoneNumber { get; set; }
         public string Website { get; set; }
         public int ReviewCount { get; set; }
+        public string Status { get; set; }
+        public string EmbedLink { get; set; }
         public float AverageRating { get; set; }
         public double Distance { get; set; }
     }
