@@ -19,6 +19,7 @@ html {
 
 body {
   margin-bottom: 60px;
+  font-family: 'InterReal', serif;
 }
 
 .fakeNavbar {
@@ -79,6 +80,7 @@ body {
 .individualResult {
   width: 69%;
   margin-bottom: 2rem;
+  font-size: 14px;
 }
 .individualResultTitle {
   border-radius: 10px 10px 0px 0px;

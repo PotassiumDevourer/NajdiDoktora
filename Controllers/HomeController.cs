@@ -2,6 +2,7 @@
 using NajdiDoktoraApp.Models;
 using NajdiDoktoraApp.Services;
 using System.Diagnostics;
+using NajdiDoktoraApp.Enums;
 
 namespace NajdiDoktoraApp.Controllers
 {
@@ -28,14 +29,30 @@ namespace NajdiDoktoraApp.Controllers
             return View();
         }
 
-        public IActionResult Search()
+        public async Task<IActionResult> Search(SearchResults model)
         {
-            return View();
+            var items = await _api.GetClinics(new SearchParams()
+            {
+                ResultCount = 5,
+                Type = ClinicType.Dentist,
+                UserLat = 50.2044472,
+                UserLong = 15.8292865,
+            });
+            model.Results = items;
+            return View(model);
         }
 
-        public IActionResult SearchFor()
+        public async  Task<IActionResult> SearchFor(SearchResults model)
         {
-            return RedirectToAction("Search");
+            var items = await _api.GetClinics(new SearchParams()
+            {
+                ResultCount = 5,
+                Type = model.Parameters.Type,
+                UserLat = 50.2044472,
+                UserLong = 15.8292865,
+            });
+            model.Results = items;
+            return RedirectToAction("Search", model);
         }
         public IActionResult Privacy()
         {
