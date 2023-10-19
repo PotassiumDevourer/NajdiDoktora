@@ -2,6 +2,7 @@
 
 @{
     Layout = null;
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 }
 
 <!DOCTYPE html>
@@ -12,5 +13,29 @@
 </head>
 <body class="overrideBody">
 <div class="fakeNavbar">Najdi doktora</div>
+<!--<form asp-action=SearchFor>
+    <input type="text" class="form-control" asp-for="" rows="1" placeholder="Adresa"/>
+    <select asp-for="" asp-items="">
+        <option>Select Type....</option>
+    </select>
+    <button type="submit" class="btn-primary">Hledat</button>
+</form>-->
+<div class="searchPart">
+    <button class="blueButtonSearch">Hledat</button>
+    <button class="blueButtonMap"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="32" viewBox="0 0 38 46" fill="none">
+                                  <path d="M25.8 19C25.8 20.8035 25.0835 22.5331 23.8083 23.8083C22.533 25.0836 20.8034 25.8 19 25.8C17.1965 25.8 15.4669 25.0836 14.1916 23.8083C12.9164 22.5331 12.2 20.8035 12.2 19C12.2 17.1965 12.9164 15.4669 14.1916 14.1917C15.4669 12.9164 17.1965 12.2 19 12.2C20.8034 12.2 22.533 12.9164 23.8083 14.1917C25.0835 15.4669 25.8 17.1965 25.8 19Z" stroke="#FDFDFD" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                  <path d="M36 19C36 35.1885 19 44.5 19 44.5C19 44.5 2 35.1885 2 19C2 14.4913 3.79107 10.1673 6.97918 6.97918C10.1673 3.79107 14.4913 2 19 2C23.5087 2 27.8327 3.79107 31.0208 6.97918C34.2089 10.1673 36 14.4913 36 19Z" stroke="#FDFDFD" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                  </svg></button>
+    <input type="text" placeholder="Adresa" rows="1" class="addressBar"/>
+    <select class="typeBar"><option>cap</option><option>cap2</option></select>
+</div> 
+<hr class="underline"/>
+<div class="results">
+    <!--add an a foreach (var item in Model)
+    {
+        
+    }-->
+    <div class="individualResult">Text lorem ipsum <p>sussy baka</p></div>
+</div>
 </body>
 </html>
