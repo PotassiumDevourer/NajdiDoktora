@@ -59,9 +59,13 @@ namespace NajdiDoktoraApp.Controllers
             return View();
         }
 
-        public IActionResult Detail()
+        public IActionResult DetailPreparation(SearchResults model)
         {
-            return View();
+            return RedirectToAction("Detail", model.Results[0]);
+        }
+        public IActionResult Detail(CompleteClinic model)
+        {
+            return View(model);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
