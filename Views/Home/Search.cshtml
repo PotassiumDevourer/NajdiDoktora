@@ -69,9 +69,9 @@
             </div>
             <div class="individualResultItems">
                 <div class="individualResultText">
-                    <div><i class="fa-solid fa-location-dot"></i><a>@EvaluateField(Model.Results[i].Name)</a></div>
+                    <div><i class="fa-solid fa-location-dot"></i><a>@EvaluateField(Model.Results[i].FormattedAddress)</a></div>
                     <div><i class="fa-solid fa-phone"></i><a>@EvaluateField(Model.Results[i].FormattedPhoneNumber)</a></div>
-                    <div><i class="fa-solid fa-globe"></i><a>@EvaluateField(Model.Results[i].Website)</a></div>
+                    <div><i class="fa-solid fa-globe"></i><a href=@Model.Results[i].Website class="web-link">@EvaluateField(Model.Results[i].Website)</a></div>
                     <div><i class="fa-solid fa-magnifying-glass"></i><a>@EvaluateField(Model.Results[i].ReviewCount.ToString())</a></div>
                     <div><i class="fa-solid fa-star"></i><a>@EvaluateField(Model.Results[i].AverageRating.ToString("0.#"))</a></div>
                     <div><i class="fa-solid fa-map-location-dot"></i><a>@Model.Results[i].Distance.ToString("0.##") km</a></div>

@@ -56,6 +56,11 @@ body {
   font-size: 15px;
   height: 2.5rem;
 }
+
+.web-link {
+    text-overflow: ellipsis;
+    width: 100px;
+}
 .typeBar:focus{
   
   border: 2px solid;
