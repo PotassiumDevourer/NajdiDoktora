@@ -61,10 +61,11 @@ namespace NajdiDoktoraApp.Controllers
 
         public IActionResult DetailPreparation(SearchResults model)
         {
-            return RedirectToAction("Detail", model.Results[0]);
+            return RedirectToAction("Detail", model.Results.FirstOrDefault(x=>x.PlaceId != null));
         }
-        public IActionResult Detail(CompleteClinic model)
+        public async Task<IActionResult> Detail(CompleteClinic model)
         {
+            model.Reviews = await _api.GetReviews(model.PlaceId);
             return View(model);
         }
 

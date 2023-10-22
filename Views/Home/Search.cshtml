@@ -41,16 +41,21 @@
         <div class="individualResult">
             <div class="individualResultTitle">
                 <form asp-action="DetailPreparation">
-                    @Html.HiddenFor(m => m.Results[0].Name, Model.Results[i].Name)
-                    @Html.HiddenFor(m => m.Results[0].Distance, Model.Results[i].Distance)
-                    @Html.HiddenFor(m => m.Results[0].AverageRating, Model.Results[i].AverageRating)
-                    @Html.HiddenFor(m => m.Results[0].EmbedLink, Model.Results[i].EmbedLink)
-                    @Html.HiddenFor(m => m.Results[0].ReviewCount, Model.Results[i].ReviewCount)
-                    @Html.HiddenFor(m => m.Results[0].Website, Model.Results[i].Website)
-                    @Html.HiddenFor(m => m.Results[0].Status, Model.Results[i].Status)
-                    @Html.HiddenFor(m => m.Results[0].FormattedAddress, Model.Results[i].FormattedAddress)
-                    @Html.HiddenFor(m => m.Results[0].IsOpen, Model.Results[i].IsOpen)
-                    @Html.HiddenFor(m => m.Results[0].FormattedPhoneNumber, Model.Results[i].FormattedPhoneNumber)
+                    @for (int x = 0; x < i; x++)
+                    {
+                        @Html.HiddenFor(m => m.Results[x].Name, "a")
+                    }
+                    @Html.HiddenFor(m => m.Results[i].Name, Model.Results[i].Name)
+                    @Html.HiddenFor(m => m.Results[i].Distance, Model.Results[i].Distance)
+                    @Html.HiddenFor(m => m.Results[i].AverageRating, Model.Results[i].AverageRating)
+                    @Html.HiddenFor(m => m.Results[i].EmbedLink, Model.Results[i].EmbedLink)
+                    @Html.HiddenFor(m => m.Results[i].ReviewCount, Model.Results[i].ReviewCount)
+                    @Html.HiddenFor(m => m.Results[i].Website, Model.Results[i].Website)
+                    @Html.HiddenFor(m => m.Results[i].PlaceId, Model.Results[i].PlaceId)
+                    @Html.HiddenFor(m => m.Results[i].Status, Model.Results[i].Status)
+                    @Html.HiddenFor(m => m.Results[i].FormattedAddress, Model.Results[i].FormattedAddress)
+                    @Html.HiddenFor(m => m.Results[i].IsOpen, Model.Results[i].IsOpen)
+                    @Html.HiddenFor(m => m.Results[i].FormattedPhoneNumber, Model.Results[i].FormattedPhoneNumber)
                     <button type="submit" class="unbutton"><a>@Model.Results[i].Name</a></button>
                 </form>
                 @if (Model.Results[i].Status == "OPERATIONAL")
